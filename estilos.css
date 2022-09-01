@@ -6,16 +6,24 @@
   box-sizing: border-box;
 }
 html, body {
-  position: relative;
+  position: fixed;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   background-color: #F9FAFF;
   font-size: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #4E4E4E;
 }
-
+::-webkit-scrollbar {
+  width: 0.8em;
+}
+::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 0.4em;
+}
+img {
+  pointer-events: none;
+}
 #btn-mobile {
   display: none;
   position: absolute;
@@ -121,8 +129,10 @@ main {
 }
 
 .logo {
-  font-size: 2.6em;
+  font-family: 'Poppins', Sans-Serif;
+  font-size: 1.8em;
   text-transform: uppercase;
+  line-height: 1.4em;
 }
 .atalhos-redes {
   font-size: 2.8em;
@@ -135,7 +145,28 @@ main {
   position: absolute;
   width: 80%;
   height: 80%;
-  border-radius: 4em;
+}
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   width: 100%;
+   height: 100%;
+   border: solid 1px green;
+}
+.cabecalho {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 60em;
+  border: solid 1px black;
+}
+.sobre-mim {
+  width: 100%;
+  height: 60em;
+  border: solid 1px blue;
 }
 .home-page.inicio {
   display: flex;
@@ -156,7 +187,7 @@ main {
   align-items: center;
   flex-wrap: wrap;
   gap: 4em;
-  background-color: grey;
+  background-color: #3E3E3E /*#F7D287*/;
   padding: 2em;
   border-radius: 2em;
 }
@@ -167,11 +198,12 @@ main {
   align-items: center;
   text-align: center;
   padding: 2em;
-  width: 18em;
-  height: 18em;
+  width: 22em;
+  height: 22em;
   border-radius: 1.4em;
   background-color: #F9FAFF;
-  box-shadow: 0 0 2.5em rgba(0,0,0, 0.8);
+  box-shadow: 0 0 2.5em rgba(0,0,0, 0.4);
+  padding: 1em 2em;
 }
 .contato-page {
   display: none;
@@ -196,18 +228,35 @@ main {
   width: 100%;
   animation: surgir 200ms ease-in;
 }
-.proj-clima a {
-  font-size: 1.2em;
+  .projetos-page li h2 {
+    font-size: 1.6em;
 }
-.proj-clima h2 {
-  color: #4E4E4E;
-  font-size: 1.2em;
+  .projetos-page li p {
+    line-height: 1em;
+    font-size: 1.4em;
+    text-align: left;
+    margin-left: 1em;
 }
-.proj-clima p {
-  color: #226FE9;
-  font-size: 1em;
-}
-
+  .projetos-page li a {
+    width: 8em;
+    height: 3.6em;
+    position: relative;
+  }
+  .projetos-page li a button {
+    background-color: #226FE9;
+    position: absolute;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: orange;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4em;
+    border: none;
+  }
 @media (max-height: 480px) and (orientation: landscape) {
   main {
     height: calc(100% - 6em);
@@ -216,11 +265,11 @@ main {
     height: 6em;
   }
   .home-page {
-    width: 70%;
+    width: 80%;
     height: 70%;
   }
   .projetos-page {
-    width: 70%;
+    width: 80%;
     height: 70%;
   }
   .projetos-page ul {
@@ -232,17 +281,21 @@ main {
     height: 15em;
     box-shadow: 0 0 2em;
   }
-  .proj-clima h2 {
+  .projetos-page li h2 {
     font-size: 1.4em;
   }
-  .proj-clima p {
-    font-size: 1em;
-  }
-  .proj-clima a {
+  .projetos-page li p {
     font-size: 1.2em;
   }
+  .projetos-page li a {
+    width: 6em;
+    height: 2.5em;
+  }
+  .projetos-page li a button {
+    font-size: 0.8em;
+  }
   .contato-page {
-    width: 70%;
+    width: 80%;
     height: 70%;
   }
   #config {
@@ -255,7 +308,6 @@ main {
   nav {
     justify-content: center;
   }
-  
   #btn-mobile {
     display: block;
   }
@@ -275,7 +327,7 @@ main {
     font-size: 2.2em;
     position: absolute;
     left: 73%;
-    bottom: -8.18em;
+    bottom: -8em;
     pointer-events: none;
     color: #4E4E4E;
   }
@@ -301,15 +353,21 @@ main {
   }
   .guias ul {
     flex-direction: column;
+    align-items: flex-start;
     gap: 2em;
-  }
-  .guias li a {
-   /* color: white;*/
+    padding-left: 3.2em;
   }
   .home-page {
     width: 90%;
-    border-radius: 2em;
   }
+  .conteudo {
+    flex-direction: row;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+  }
+ .cabecalho {
+   flex-direction: column;
+ }
   .projetos-page {
     width: 90%;
     border-radius: 2em;
@@ -327,38 +385,13 @@ main {
     overflow-y: auto;
   }
   .projetos-page li {
-    width: 22em;
-    height: 22em;
     border-radius: 1em;
-  }
-  .proj-clima a {
-  font-size: 1.4em;
-  }
-  .proj-clima h2 {
-  color: #4E4E4E;
-  font-size: 1.6em;
-  }
-  .proj-clima p {
-  color: #226FE9;
-  font-size: 1.2em;
   }
 }
 
 @media (min-width: 1280px) {
   .projetos-page li {
-    width: 22em;
-    height: 22em;
-  }
-  .proj-clima a {
-  font-size: 1.4em;
-  }
-  .proj-clima h2 {
-  color: #4E4E4E;
-  font-size: 1.6em;
-  }
-  .proj-clima p {
-  color: #226FE9;
-  font-size: 1.2em;
+    
   }
 }
 
