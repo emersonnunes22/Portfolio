@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@400;500;700;900&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 html, body {
   position: fixed;
@@ -11,15 +11,7 @@ html, body {
   height: 100%;
   background-color: #F9FAFF;
   font-size: 10px;
-  font-family: 'Roboto', sans-serif;
-  color: #4E4E4E;
-}
-::-webkit-scrollbar {
-  width: 0.8em;
-}
-::-webkit-scrollbar-thumb {
-  background-color: grey;
-  border-radius: 0.4em;
+  color: #292A2B;
 }
 img {
   pointer-events: none;
@@ -28,8 +20,9 @@ img {
   display: none;
   position: absolute;
   right: 0.4em;
-  font-size: 5em;
+  font-size: 4em;
   font-weight: 500;
+
 }
 #btn-mobilex {
   display: none;
@@ -38,6 +31,8 @@ img {
   left: 0.4em;
   margin: auto;
   font-size: 2.6em;
+  font-weight: 500;
+
 }
 
 #config {
@@ -53,7 +48,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0em 4%;
+  padding: 0em 5%;
 }
 main {
   width: 100%;
@@ -80,7 +75,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 3.6em;
+  gap: 6em;
 }
 .guias li {
   text-transform: uppercase;
@@ -91,16 +86,16 @@ main {
 .guias li a {
   position: relative;
   text-decoration: none;
-  color: #4E4E4E;
+
 }
 .guias .home-a:after {
   position: absolute;
   right: 0;
-  bottom: -0.4em;
+  bottom: -0.2em;
   content: "";
-  background-color: #226FE9;
+  background-color: #368ce7;
   width: 0;
-  height: 0.28em;
+  height: 0.36em;
   border-radius: 0.10em;
 }
 
@@ -110,35 +105,38 @@ main {
 .guias .proj-a:after{
   position: absolute;
   right: 0;
-  bottom: -0.4em;
+  bottom: -0.2em;
   content: "";
-  background-color: #226FE9;
+  background-color: #368ce7;
   width: 0;
-  height: 0.28em;
+  height: 0.36em;
   border-radius: 0.10em;
 }
 .guias .contato-a:after {
   position: absolute;
   right: 0;
-  bottom: -0.4em;
+  bottom: -0.2em;
   content: "";
-  background-color: #226FE9;
+  background-color: #368ce7;
   width: 0;
-  height: 0.28em;
+  height: 0.36em;
   border-radius: 0.10em;
 }
 
 .logo {
-  font-family: 'Poppins', Sans-Serif;
-  font-size: 1.8em;
   text-transform: uppercase;
-  line-height: 1.4em;
+  text-align: justify;
+}
+.logo h1 {
+  font-size: 3em;
+  font-weight: 700;
 }
 .atalhos-redes {
-  font-size: 2.8em;
+  letter-spacing: -0.16em;
+  font-size: 2.6em;
 }
 .atalhos-redes a {
-  color: #4E4E4E;
+  color: #292A2B;
 }
 .home-page {
   display: none;
@@ -152,7 +150,12 @@ main {
   justify-content: center;
    width: 100%;
    height: 100%;
-   border: solid 1px green;
+}
+.conteudo-left {
+  text-align: center;
+}
+.conteudo-left h2 {
+  font-size: 3.6em;
 }
 .cabecalho {
   display: flex;
@@ -161,12 +164,10 @@ main {
   align-items: center;
   width: 100%;
   height: 60em;
-  border: solid 1px black;
 }
 .sobre-mim {
   width: 100%;
   height: 60em;
-  border: solid 1px blue;
 }
 .home-page.inicio {
   display: flex;
@@ -187,7 +188,7 @@ main {
   align-items: center;
   flex-wrap: wrap;
   gap: 4em;
-  background-color: #3E3E3E /*#F7D287*/;
+  background-color: #474647;
   padding: 2em;
   border-radius: 2em;
 }
@@ -197,13 +198,13 @@ main {
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  padding: 2em;
   width: 22em;
   height: 22em;
   border-radius: 1.4em;
   background-color: #F9FAFF;
   box-shadow: 0 0 2.5em rgba(0,0,0, 0.4);
   padding: 1em 2em;
+  color: black;
 }
 .contato-page {
   display: none;
@@ -234,8 +235,7 @@ main {
   .projetos-page li p {
     line-height: 1em;
     font-size: 1.4em;
-    text-align: left;
-    margin-left: 1em;
+    text-align: center;
 }
   .projetos-page li a {
     width: 8em;
@@ -243,19 +243,22 @@ main {
     position: relative;
   }
   .projetos-page li a button {
-    background-color: #226FE9;
+    background-color: orange;
     position: absolute;
-    font-size: 1em;
+    font-size: 1.2em;
     text-transform: uppercase;
     font-weight: 500;
     left: 0;
     right: 0;
     margin: auto;
-    color: orange;
+    color: #292A2B;
     width: 100%;
     height: 100%;
     border-radius: 0.4em;
     border: none;
+  }
+  .projetos-page li a button:active {
+   animation: button 500ms;
   }
 @media (max-height: 480px) and (orientation: landscape) {
   main {
@@ -274,26 +277,28 @@ main {
   }
   .projetos-page ul {
     gap: 6em;
-    padding: 4em 0em;
+    padding: 4em 2em;
     overflow-y: auto;
   }
   .projetos-page li {
+    width: 16em;
     height: 15em;
-    box-shadow: 0 0 2em;
+
   }
   .projetos-page li h2 {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
   .projetos-page li p {
-    font-size: 1.2em;
+    font-size: 1em;
   }
   .projetos-page li a {
     width: 6em;
-    height: 2.5em;
+    height: 3em;
   }
   .projetos-page li a button {
-    font-size: 0.8em;
+    font-size: 1em;
   }
+
   .contato-page {
     width: 80%;
     height: 70%;
@@ -307,7 +312,11 @@ main {
   
   nav {
     justify-content: center;
+    height: 8em;
   }
+ main {
+   height: calc(100% - 8em);
+ }
   #btn-mobile {
     display: block;
   }
@@ -324,10 +333,10 @@ main {
     z-index: 2;
     display: block;
     opacity: 0;
-    font-size: 2.2em;
+    font-size: 2.8em;
     position: absolute;
     left: 73%;
-    bottom: -8em;
+    bottom: -7.2em;
     pointer-events: none;
     color: #4E4E4E;
   }
@@ -339,7 +348,7 @@ main {
   }
   
   .guias {
-    height: calc(100% + 8em);
+    height: calc(100% + 12em);
     left: calc(100% + 1em);
     bottom: -28em;
     background-color: #F9FAFF;
@@ -354,11 +363,12 @@ main {
   .guias ul {
     flex-direction: column;
     align-items: flex-start;
-    gap: 2em;
+    gap: 1.6em;
     padding-left: 3.2em;
   }
   .home-page {
-    width: 90%;
+    width: 100%;
+    height: calc(100% - 8em);
   }
   .conteudo {
     flex-direction: row;
@@ -373,14 +383,14 @@ main {
     border-radius: 2em;
   }
   .contato-page {
-    width: 90%;
+    width: 100%;
     border-radius: 2em;
   }
   #config {
     display: none;
   }
   .projetos-page ul {
-    padding: 6em 0em;
+    padding: 5em 0em;
     gap: 3.2em;
     overflow-y: auto;
   }
@@ -408,6 +418,15 @@ main {
     transform: scale(0.2);
   }
   to {
+    transform: scale(1);
+  }
+}
+
+@keyframes button {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
     transform: scale(1);
   }
 }
