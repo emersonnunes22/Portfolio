@@ -1,17 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Quicksand:wght@400;500;700&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 html, body {
-  position: fixed;
+  overflow: hidden;
   width: 100%;
   height: 100%;
-  background-color: #F9FAFF;
+  max-height: 1080px;
+  background: linear-gradient(#384CD1, black)/*#F9FAFF*/;
   font-size: 10px;
-  color: #292A2B;
+  color: #F9FAFF;
+  font-family: 'Poppins', sans-serif;
+  border: solid 1.5px black;
 }
 img {
   pointer-events: none;
@@ -20,7 +22,7 @@ img {
   display: none;
   position: absolute;
   right: 0.4em;
-  font-size: 4em;
+  font-size: 4.8em;
   font-weight: 500;
 
 }
@@ -35,12 +37,6 @@ img {
 
 }
 
-#config {
-  position: absolute;
-  font-size: 2em;
-  right: 1em;
-  bottom: 1em;
-}
 nav {
   position: relative;
   width: 100%;
@@ -62,8 +58,6 @@ main {
   position: absolute;
   right: 0;
   left: 0;
-  top: 0;
-  bottom: 0;
   margin: auto;
   width: 36%;
   height: 100%;
@@ -75,12 +69,13 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 6em;
+  gap: 2.6em;
 }
 .guias li {
   text-transform: uppercase;
   list-style: none;
-  font-size: 1.5em;
+  font-size: 1.4em;
+  font-weight: 400;
 }
 
 .guias li a {
@@ -91,11 +86,11 @@ main {
 .guias .home-a:after {
   position: absolute;
   right: 0;
-  bottom: -0.2em;
+  bottom: -0.28em;
   content: "";
-  background-color: #368ce7;
+  background-color: orange;
   width: 0;
-  height: 0.36em;
+  height: 0.32em;
   border-radius: 0.10em;
 }
 
@@ -105,69 +100,111 @@ main {
 .guias .proj-a:after{
   position: absolute;
   right: 0;
-  bottom: -0.2em;
+  bottom: -0.28em;
   content: "";
-  background-color: #368ce7;
+  background-color: orange;
   width: 0;
-  height: 0.36em;
+  height: 0.32em;
   border-radius: 0.10em;
 }
 .guias .contato-a:after {
   position: absolute;
   right: 0;
-  bottom: -0.2em;
+  bottom: -0.28em;
   content: "";
-  background-color: #368ce7;
+  background-color: orange;
   width: 0;
-  height: 0.36em;
+  height: 0.32em;
   border-radius: 0.10em;
 }
 
 .logo {
-  text-transform: uppercase;
-  text-align: justify;
-}
-.logo h1 {
-  font-size: 3em;
-  font-weight: 700;
 }
 .atalhos-redes {
-  letter-spacing: -0.16em;
-  font-size: 2.6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .atalhos-redes a {
-  color: #292A2B;
+  font-size: 2em;
 }
 .home-page {
   display: none;
   position: absolute;
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
 }
 .conteudo {
   display: flex;
   flex-direction: column;
   justify-content: center;
-   width: 100%;
-   height: 100%;
-}
-.conteudo-left {
-  text-align: center;
-}
-.conteudo-left h2 {
-  font-size: 3.6em;
-}
-.cabecalho {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 60em;
+  height: 100%;
+  padding-bottom: 2em;
+}
+
+.cabecalho {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.conteudo-left {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  line-height: 4em;
+  width: 80%;
+  height: 100%;
+  padding-top: 12em;
+}
+.avatar {
+  position: absolute;
+  width: 34em;
+  height: 36em;
+  right: 10em;
+  bottom: 0;
+  filter: drop-shadow( 0 0 4em rgba(255, 255, 255, 0.5));
+}
+.avatar01 {
+  position: absolute;
+  width: 15em;
+  height: 15em;
+  bottom: 10em;
+  left: 15%;
+  animation: fluct 6s linear infinite;
+}
+
+.nome {
+  text-decoration: underline 0.2em #368ce7;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+.descricao {
+  margin-top: 1.6em;
+  font-size: 1.4em;
+  line-height: 1em;
+  width: 48%;
+}
+.conteudo-left h2 {
+  font-size: 5.4em;
 }
 .sobre-mim {
+  font-size: 0.6em;
+  padding-top: 2.6em;
+  text-align: center;
+  text-transform: uppercase;
   width: 100%;
-  height: 60em;
+  height: 44%;
+  border-radius: 2.6em;
+  border-top: solid 0.6em #F9FAFF;
+  overflow: hidden;
 }
 .home-page.inicio {
   display: flex;
@@ -177,7 +214,6 @@ main {
   position: absolute;
   width: 80%;
   height: 80%;
-  max-width: 900px;
   border-radius: 4em;
 }
 .projetos-page ul {
@@ -239,7 +275,7 @@ main {
 }
   .projetos-page li a {
     width: 8em;
-    height: 3.6em;
+    height: 3.4em;
     position: relative;
   }
   .projetos-page li a button {
@@ -268,8 +304,11 @@ main {
     height: 6em;
   }
   .home-page {
-    width: 80%;
+    width: 90%;
     height: 70%;
+  }
+  .conteudo-left {
+    padding-top: 4em;
   }
   .projetos-page {
     width: 80%;
@@ -280,25 +319,6 @@ main {
     padding: 4em 2em;
     overflow-y: auto;
   }
-  .projetos-page li {
-    width: 16em;
-    height: 15em;
-
-  }
-  .projetos-page li h2 {
-    font-size: 1.2em;
-  }
-  .projetos-page li p {
-    font-size: 1em;
-  }
-  .projetos-page li a {
-    width: 6em;
-    height: 3em;
-  }
-  .projetos-page li a button {
-    font-size: 1em;
-  }
-
   .contato-page {
     width: 80%;
     height: 70%;
@@ -329,31 +349,19 @@ main {
   #btn-mobilex.active {
     display: block;
   }
+  .logo {
+    font-size: 1.6em;
+  }
   .atalhos-redes {
-    z-index: 2;
-    display: block;
-    opacity: 0;
-    font-size: 2.8em;
-    position: absolute;
-    left: 73%;
-    bottom: -7.2em;
-    pointer-events: none;
-    color: #4E4E4E;
-  }
-  .atalhos-redes.redes-mobile {
-    opacity: 100%;
-    pointer-events: auto;
-    transition: 300ms linear;
-    transition-delay: 300ms;
-  }
-  
+    display: none;
+}
   .guias {
     height: calc(100% + 12em);
     left: calc(100% + 1em);
-    bottom: -28em;
-    background-color: #F9FAFF;
+    bottom: -20em;
+    background-color: #1C1C1C;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
-    border-radius: 1em;
+    border-radius: 0.8em;
     transition: 300ms linear;
   }
   .guias.menu-mobile {
@@ -363,12 +371,11 @@ main {
   .guias ul {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.6em;
     padding-left: 3.2em;
+    gap: 2em;
   }
   .home-page {
     width: 100%;
-    height: calc(100% - 8em);
   }
   .conteudo {
     flex-direction: row;
@@ -377,7 +384,47 @@ main {
   }
  .cabecalho {
    flex-direction: column;
+   height: 60%;
+   overflow: hidden;
  }
+ .conteudo-left {
+   justify-content: center;
+   width: 100%;
+   height: 60%;
+   line-height: 3.2em;
+   padding: 0em 10%;
+ }
+ .avatar {
+   width: 18em;
+   height: 18em;
+   bottom: -1em;
+   left: 0;
+   right: 0;
+   margin: auto;
+   filter: drop-shadow( 0 0 4em rgba(255, 255, 255, 0.5));
+ }
+ .avatar01 {
+   width: 8em;
+   height: 8em;
+   top: 0;
+ }
+ .nome {
+   font-size: 1.8em;
+ }
+ .descricao {
+   margin-top: 1.6em;
+   font-size: 1.2em;
+   padding: 0em 5%;
+   width: 100%;
+ }
+ .conteudo-left h2 {
+   font-size: 3.6em;
+ }
+ .sobre-mim {
+   width: 100%;
+   height: 40%;
+ }
+
   .projetos-page {
     width: 90%;
     border-radius: 2em;
@@ -398,10 +445,30 @@ main {
     border-radius: 1em;
   }
 }
-
 @media (min-width: 1280px) {
-  .projetos-page li {
-    
+  .nome {
+    font-size: 2.2em;
+  }
+  .conteudo-left h2 {
+    font-size: 6em;
+  }
+  .avatar {
+    width: 46em;
+    height: 46em;
+  }
+  .projetos-page ul {
+    gap: 8em;
+  }
+}
+@media (min-height: 800px) and (max-width: 560px) {
+  .conteudo-left {
+    height: 50%;
+  }
+  .sobre-mim {
+    height: 50%;
+  }
+  .conteudo-left h2 {
+  font-size: 4em;
   }
 }
 
@@ -428,5 +495,16 @@ main {
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes fluct {
+  0% {
+    transform: translatey(1);
+  }
+  50% {
+    transform: translatey(5em);
+  }
+  100% {
+    transform: translatey(1);
   }
 }

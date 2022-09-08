@@ -60,19 +60,16 @@ getGuias();
 
 function getMenuMobile () {
 
-const atalhosRedes = document.querySelector('.atalhos-redes');
 const guias = document.querySelector('.guias');
 const btnMobile = document.querySelector('#btn-mobile');
  const btnMobilex = document.querySelector('#btn-mobilex');
 
 btnMobile.addEventListener('click', function(){
-  atalhosRedes.classList.add('redes-mobile');
   guias.classList.add('menu-mobile');
   btnMobile.classList.add('disable');
   btnMobilex.classList.add('active');
 });
 btnMobilex.addEventListener('click', function(){
-  atalhosRedes.classList.remove('redes-mobile');
   guias.classList.remove('menu-mobile');
   btnMobilex.classList.remove('active');
   btnMobile.classList.remove('disable');
