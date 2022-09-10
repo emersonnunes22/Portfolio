@@ -7,11 +7,10 @@
 html, body {
   overflow: hidden;
   width: 100%;
-  height: 100%;
-  max-height: 1080px;
-  background: linear-gradient(#384CD1, black)/*#F9FAFF*/;
+  height: 100vh;
+  background: #F9FAFF;
   font-size: 10px;
-  color: #F9FAFF;
+  color: black;
   font-family: 'Poppins', sans-serif;
   border: solid 1.5px black;
 }
@@ -119,6 +118,7 @@ main {
 }
 
 .logo {
+  font-size: 1.8em;
 }
 .atalhos-redes {
   display: flex;
@@ -132,79 +132,23 @@ main {
   display: none;
   position: absolute;
   width: 100%;
-  height: 100%;
-}
-.conteudo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 2em;
-}
-
-.cabecalho {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-.conteudo-left {
-  margin: 0 auto;
+  height: calc(100% - 12em);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
-  line-height: 4em;
-  width: 80%;
+  align-items: center;
+}
+ .conteudo-texto {
+  width: 60%;
   height: 100%;
-  padding-top: 12em;
+  display: flex;
+  flex-direction: column;
 }
-.avatar {
-  position: absolute;
-  width: 34em;
-  height: 36em;
-  right: 10em;
-  bottom: 0;
-  filter: drop-shadow( 0 0 4em rgba(255, 255, 255, 0.5));
+.conteudo-texto h2 {
+  font-size: 1.6em;
 }
-.avatar01 {
-  position: absolute;
-  width: 15em;
-  height: 15em;
-  bottom: 10em;
-  left: 15%;
-  animation: fluct 6s linear infinite;
-}
-
-.nome {
-  text-decoration: underline 0.2em #368ce7;
-  font-size: 1.8em;
-  font-weight: 700;
-}
-.descricao {
-  margin-top: 1.6em;
-  font-size: 1.4em;
-  line-height: 1em;
-  width: 48%;
-}
-.conteudo-left h2 {
-  font-size: 5.4em;
-}
-.sobre-mim {
-  font-size: 0.6em;
-  padding-top: 2.6em;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%;
-  height: 44%;
-  border-radius: 2.6em;
-  border-top: solid 0.6em #F9FAFF;
-  overflow: hidden;
+.conteudo-texto h1 {
+  font-size: 3.6em;
 }
 .home-page.inicio {
   display: flex;
@@ -224,7 +168,7 @@ main {
   align-items: center;
   flex-wrap: wrap;
   gap: 4em;
-  background-color: #474647;
+  background-color: grey;
   padding: 2em;
   border-radius: 2em;
 }
@@ -241,6 +185,10 @@ main {
   box-shadow: 0 0 2.5em rgba(0,0,0, 0.4);
   padding: 1em 2em;
   color: black;
+}
+.projetos-page li:hover {
+  transform: scale(1.06);
+  transition: 200ms linear;
 }
 .contato-page {
   display: none;
@@ -333,6 +281,7 @@ main {
   nav {
     justify-content: center;
     height: 8em;
+    border: solid 1px red;
   }
  main {
    height: calc(100% - 8em);
@@ -359,7 +308,7 @@ main {
     height: calc(100% + 12em);
     left: calc(100% + 1em);
     bottom: -20em;
-    background-color: #1C1C1C;
+    background-color: #F9FAFF;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
     border-radius: 0.8em;
     transition: 300ms linear;
@@ -375,56 +324,17 @@ main {
     gap: 2em;
   }
   .home-page {
-    width: 100%;
+    height: calc(100% - 8em);
+    flex-direction: column;
   }
-  .conteudo {
-    flex-direction: row;
-    overflow-y: scroll;
-    flex-wrap: wrap;
-  }
- .cabecalho {
-   flex-direction: column;
-   height: 60%;
-   overflow: hidden;
- }
- .conteudo-left {
-   justify-content: center;
-   width: 100%;
-   height: 60%;
-   line-height: 3.2em;
-   padding: 0em 10%;
- }
- .avatar {
-   width: 18em;
-   height: 18em;
-   bottom: -1em;
-   left: 0;
-   right: 0;
-   margin: auto;
-   filter: drop-shadow( 0 0 4em rgba(255, 255, 255, 0.5));
- }
- .avatar01 {
-   width: 8em;
-   height: 8em;
-   top: 0;
- }
- .nome {
-   font-size: 1.8em;
- }
- .descricao {
-   margin-top: 1.6em;
-   font-size: 1.2em;
-   padding: 0em 5%;
-   width: 100%;
- }
- .conteudo-left h2 {
-   font-size: 3.6em;
- }
- .sobre-mim {
-   width: 100%;
+  .conteudo-texto {
+   width: 90%;
    height: 40%;
- }
-
+   justify-content: flex-start;
+   align-items: center;
+   padding-top: 2em;
+   border: solid 1px blue;
+  }
   .projetos-page {
     width: 90%;
     border-radius: 2em;
