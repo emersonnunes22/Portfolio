@@ -9,12 +9,12 @@
   </head>
 <body>
   <nav>
-     <i id="btn-mobile" class='bx bx-menu'></i>
+     <span class="span-btn-mobile"><i id="btn-mobile" class='bx bxs-chevrons-left'></i></span>
     <div class="logo">
       <h1>Deven<font color="orange">.</font></h1>
     </div>
     <div class="guias">
-      <i id="btn-mobilex" class='bx bx-x'></i>
+      <span class="span-btn-mobilex"><i id="btn-mobilex" class='bx bx-x'></i></span>
       <ul>
         <li class="home"><a class="home-a">Home</a></li>
         <li class="projetos"><a class="proj-a">Projetos</a></li>
@@ -29,17 +29,19 @@
     <main>
       <div class="home-page" not>
        <div class="conteudo">
-        <h2>Ola, Meu nome é Emerson Nunes,</h2>
-         <h1>Web Developer</h1>
-         <p></p>
+        <h2>Ola, Meu nome é 
+        <span class="nome"><a>Emerson Nunes,</a></span></h2>
+         <h1>Web <br>Developer Jr<font color="orange">.</font></h1>
+         <p>Estudando e praticando desenvolvimento web em meus próprios projetos há mais ou menos 8 meses. Projetos <strong>Front end</strong> utilizando Api e noções de UI/UX.</p>
       </div>
-      <img class="avatar" src="#">
+      <div class="div-avatar">
+        </div>
      </div>
       <div class="projetos-page" not>
         <ul>
           <li class="proj-clima">
-            <h2>Site Clima</h2>
-            <p>Esse post exige um conhecimento bem introdutório sobre React (criação e uso de componentes e state)</p>
+            <h2>Site de informações climáticas</h2>
+            <p>Basicamente um card que mostra a temperatura, a condição do céu (nublado, limpo, etc..), velocidade do vento e um input onde vai ser digitado o nome da cidade e utilizando uma Api externa para fazer a requisição dos dados climáticos.</p>
             <a href="https://emersonnunes22.github.io/informacoes_do_clima/"><button>Ir Ao Site</button></a>
             </li>
           <li></li>
@@ -51,6 +53,7 @@
       </div>
       <div class="contato-page" not></div>
       </main>
+      <footer><p class="createdby">Created by</p><h1>Deven<font color="orange">.</font></h1></footer>
       <script src="scripts.js"></script>
 </body>
 </html>

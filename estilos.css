@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 html, body {
+  position: relative;
   overflow: hidden;
   width: 100%;
   height: 100vh;
@@ -16,22 +17,36 @@ html, body {
 img {
   pointer-events: none;
 }
-#btn-mobile {
+.span-btn-mobile {
   display: none;
   position: absolute;
-  right: 0.4em;
-  font-size: 4.8em;
+  right: 1.6em;
+  background-color: #7048E8;
+  border-radius: 50%;
+  width: 4em;
+  height: 4em;
+}
+#btn-mobile {
+  transform: translate(14%, 19%);
+  font-size: 3em;
   font-weight: 500;
-
+  color: #B197FC;
+}
+.span-btn-mobilex {
+  display: none;
+  position: absolute;
+  background-color: #7048E8;
+  top: 0.6em;
+  left: 0.6em;
+  width: 2.8em;
+  height: 2.8em;
+  border-radius: 50%;
 }
 #btn-mobilex {
-  display: none;
-  position: absolute;
-  top: 0.4em;
-  left: 0.4em;
-  margin: auto;
   font-size: 2.6em;
   font-weight: 500;
+  color: #B197FC;
+  transform: translate(3%, 7%)
 }
 
 nav {
@@ -69,7 +84,6 @@ main {
   gap: 2.6em;
 }
 .guias li {
-  text-transform: uppercase;
   list-style: none;
   font-size: 1.4em;
   font-weight: 400;
@@ -136,6 +150,7 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  padding: 0 8%;
 }
 .conteudo {
   display: flex;
@@ -143,21 +158,46 @@ main {
   justify-content: center;
   align-items: flex-start;
   line-height: 2.8em;
-  width: 50em;
-  height: 50%;
-  border: solid 1px blue;
-  padding: 0 6%;
+  width: 60%;
+  height: 60%;
 }
 .conteudo h2 {
-  font-size: 1.6em;
+  font-size: 2em;
+  font-weight: 500;
+}
+.nome a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+.nome a:after {
+  position: absolute;
+  width: 100%;
+  height: 0.2em;
+  content: "";
+  background-color: black;
+  bottom: 0em;
+  left: 0;
+  animation: gaga 600ms ease;
 }
 .conteudo h1 {
-  font-size: 4.2em;
+  font-size: 6em;
+  line-height: 1em;
 }
-.avatar {
-  width: 40em;
-  height: 50%;
-  border: solid 1px red;
+.conteudo p {
+  font-weight: 300;
+  font-size: 1em;
+  margin-top: 2.6em;
+  line-height: 1.2em;
+  max-width: 80%;
+  text-align: justify;
+}
+.div-avatar {
+  width: 50%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .home-page.inicio {
   display: flex;
@@ -168,6 +208,7 @@ main {
   width: 80%;
   height: 80%;
   border-radius: 4em;
+  margin-bottom: 6em;
 }
 .projetos-page ul {
   width: 100%;
@@ -177,9 +218,10 @@ main {
   align-items: center;
   flex-wrap: wrap;
   gap: 4em;
-  background-color: #DEB887;
+  background-color: #7048E8;
   padding: 2em;
   border-radius: 2em;
+  box-shadow: inset 0 0 2.5em rgba(0,0,0, 0.4);
 }
 .projetos-page li {
   display: flex;
@@ -189,9 +231,8 @@ main {
   text-align: center;
   width: 22em;
   height: 22em;
-  border-radius: 1.4em;
-  background-color: #F9FAFF;
-  box-shadow: 0 0 2.5em rgba(0,0,0, 0.4);
+  border-radius: 2em;
+  background-color: white;
   padding: 1em 2em;
   color: black;
 }
@@ -219,12 +260,14 @@ main {
   animation: surgir 200ms ease-in;
 }
   .projetos-page li h2 {
-    font-size: 1.6em;
+    font-size: 1.2em;
 }
   .projetos-page li p {
     line-height: 1em;
-    font-size: 1.4em;
-    text-align: center;
+    font-size: 1.1em;
+    text-align: justify;
+    word-spacing: -0.2em;
+    padding: 0 5%;
 }
   .projetos-page li a {
     width: 8em;
@@ -240,15 +283,28 @@ main {
     left: 0;
     right: 0;
     margin: auto;
-    color: #292A2B;
+    color: black;
     width: 100%;
     height: 100%;
-    border-radius: 0.4em;
+    border-radius: 1.8em;
     border: none;
   }
   .projetos-page li a button:active {
    animation: button 500ms;
   }
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 6em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8em;
+    background-color: black;
+    color: white;
+}
 @media (max-height: 480px) and (orientation: landscape) {
   main {
     height: calc(100% - 6em);
@@ -282,22 +338,21 @@ main {
   
   nav {
     justify-content: center;
-    border: solid 1px red;
   }
-  #btn-mobile {
+  .span-btn-mobile {
     display: block;
   }
-  #btn-mobile.disable {
+  .span-btn-mobile.disable {
     display: none;
   }
-  #btn-mobilex {
+  .span-btn-mobilex {
     display: none;
   }
-  #btn-mobilex.active {
+  .span-btn-mobilex.active {
     display: block;
   }
   .logo {
-    font-size: 1.6em;
+    font-size: 1.8em;
   }
   .atalhos-redes {
     display: none;
@@ -307,7 +362,7 @@ main {
     left: calc(100% + 1em);
     bottom: -20em;
     background-color: #F9FAFF;
-    box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
+    border: solid 0.4em #B197FC;
     border-radius: 0.8em;
     transition: 300ms linear;
   }
@@ -318,22 +373,38 @@ main {
   .guias ul {
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 3.2em;
+    padding-left: 3em;
     gap: 2em;
+  }
+  .guias li {
+    font-size: 1.6em;
   }
   .home-page {
     flex-direction: column;
     justify-content: flex-start;
+    padding: 0 5%;
   }
   .conteudo {
-    padding-top: 5em;
     justify-content: flex-start;
     width: 100%;
     height: 50%;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 6em;
   }
-  .avatar {
+  .conteudo h2 {
+    font-size: 1.6em;
+  }
+  .conteudo h1 {
+    font-size: 4.4em;
+  }
+  .conteudo p {
+    font-size: 1.26em;
+    max-width: 100%;
+    margin: auto;
+ }
+  .div-avatar {
     width: 100%;
-    height: 50%;
   }
   .projetos-page {
     width: 90%;
@@ -351,11 +422,15 @@ main {
     gap: 3.2em;
     overflow-y: auto;
   }
-  .projetos-page li {
-    border-radius: 1em;
-  }
 }
 @media (min-width: 1280px) {
+  .conteudo p {
+    max-width: 65%;
+  }
+  .avatar {
+    width: 28em;
+    height: 28em;
+  }
   .projetos-page ul {
     gap: 8em;
     padding: 4em 0;
@@ -385,5 +460,17 @@ main {
   }
   100% {
     transform: translatex(1);
+  }
+}
+
+@keyframes fluct {
+  0% {
+    transform: translatey(-2em);
+  }
+  50% {
+    transform: translatey(3em);
+  }
+  100% { 
+    transform: translatey(-2em);
   }
 }

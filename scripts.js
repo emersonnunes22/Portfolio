@@ -63,16 +63,18 @@ function getMenuMobile () {
 const guias = document.querySelector('.guias');
 const btnMobile = document.querySelector('#btn-mobile');
  const btnMobilex = document.querySelector('#btn-mobilex');
+ const spanBtnMobile = document.querySelector('.span-btn-mobile');
+ const spanBtnMobilex = document.querySelector('.span-btn-mobilex')
 
 btnMobile.addEventListener('click', function(){
   guias.classList.add('menu-mobile');
-  btnMobile.classList.add('disable');
-  btnMobilex.classList.add('active');
+  spanBtnMobile.classList.add('disable');
+  spanBtnMobilex.classList.add('active');
 });
 btnMobilex.addEventListener('click', function(){
   guias.classList.remove('menu-mobile');
-  btnMobilex.classList.remove('active');
-  btnMobile.classList.remove('disable');
+  spanBtnMobilex.classList.remove('active');
+  spanBtnMobile.classList.remove('disable');
 })
 }
 getMenuMobile();
