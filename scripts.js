@@ -7,6 +7,7 @@ const cttPage = document.querySelector('.contato-page');
 const selectHome = document.querySelector('.home-a');
 const selectProj = document.querySelector('.proj-a');
 const selectContato = document.querySelector('.contato-a');
+const guias = document.querySelector('.guias');
 
 function getGuias () {
   
@@ -60,7 +61,7 @@ getGuias();
 
 function getMenuMobile () {
 
-const guias = document.querySelector('.guias');
+
 const btnMobile = document.querySelector('#btn-mobile');
  const btnMobilex = document.querySelector('#btn-mobilex');
  const spanBtnMobile = document.querySelector('.span-btn-mobile');
@@ -78,3 +79,36 @@ btnMobilex.addEventListener('click', function(){
 })
 }
 getMenuMobile();
+
+function darkMode () {
+  const body = document.body;
+  const darkOn = document.querySelector('#dark-on')
+  const darkOff = document.querySelector('#dark-off');
+  const nomea = document.querySelector('.nome a');
+
+  darkOff.classList.add("ativo");
+  nomea.classList.remove("dark")
+  
+ 
+  darkOn.addEventListener('click', function(){
+   
+    darkOn.classList.remove("on");
+    darkOff.classList.remove("ativo");
+    darkOff.classList.add("on");
+    body.classList.remove("dark");
+    nomea.classList.remove("dark")
+    guias.classList.remove("dark")
+
+  })
+  
+  darkOff.addEventListener('click', function(){
+
+    darkOn.classList.add("on");
+    darkOff.classList.remove("on");
+    darkOff.classList.remove("ativo");
+    body.classList.add("dark");
+    nomea.classList.add("dark");
+    guias.classList.add("dark")
+  })
+}
+darkMode();

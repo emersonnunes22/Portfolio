@@ -9,10 +9,16 @@ html, body {
   overflow: hidden;
   width: 100%;
   height: 100vh;
-  background-color: #F9FAFF;
+  background-color: white;
   font-size: 10px;
   color: black;
   font-family: 'Poppins', sans-serif;
+  transition: 500ms linear;
+}
+body.dark {
+  background-color: #1D1D1D;
+  color: white;
+  transition: 500ms linear;
 }
 img {
   pointer-events: none;
@@ -20,7 +26,7 @@ img {
 .span-btn-mobile {
   display: none;
   position: absolute;
-  right: 1.6em;
+  right: 2em;
   background-color: #7048E8;
   border-radius: 50%;
   width: 4em;
@@ -58,6 +64,40 @@ nav {
   align-items: center;
   padding: 0em 5%;
 }
+.dark-mode {
+  width: 4em;
+  height: 4em;
+  position: absolute;
+  left: 24%;
+  border-radius: 50%;
+  border: solid 0.3em #7048E8;
+  padding: 0.46em;
+}
+.dark-mode i {
+  transform: translate(18%, 22%);
+  position: absolute;
+  font-size: 2.5em;
+  color: #B197FC;
+}
+#dark-off {
+  display: none;
+  transform: rotatez(1deg);
+}
+#dark-on {
+  display: none;
+  transform: rotatez(1deg);
+}
+#dark-off.on {
+  animation: tata 1s;
+  display: block;
+}
+#dark-off.ativo {
+  display: block;
+}
+#dark-on.on {
+  animation: tata 1s;
+  display: block;
+}
 main {
   width: 100%;
   height: calc(100% - 8em);
@@ -74,6 +114,7 @@ main {
   width: 36%;
   height: 100%;
 }
+
 .guias ul {
   width: 100%;
   height: 100%;
@@ -150,12 +191,12 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  padding: 0 8%;
+  padding: 6% 8%;
 }
 .conteudo {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   line-height: 2.8em;
   width: 60%;
@@ -175,10 +216,13 @@ main {
   width: 100%;
   height: 0.2em;
   content: "";
-  background-color: black;
+  background-color: #7048E8;
   bottom: 0em;
   left: 0;
   animation: gaga 600ms ease;
+}
+.nome a.dark {
+  color: white;
 }
 .conteudo h1 {
   font-size: 6em;
@@ -192,12 +236,28 @@ main {
   max-width: 80%;
   text-align: justify;
 }
-.div-avatar {
+.skills {
+  position: relative;
+  background-color: white;
   width: 50%;
-  height: 60%;
+  height: 26em;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  align-items: flex-start;
+  border-radius: 2em;
+  flex-wrap: wrap;
+  padding: 2em;
+  border: solid 0.2em black;
+}
+.skills h2 {
+  position: absolute;
+  top: 0.5em;
+  font-size: 1.6em;
+}
+.skills i {
+  margin-top: 0.4em;
+  font-size: 8em;
+  color: #B197FC;
 }
 .home-page.inicio {
   display: flex;
@@ -208,7 +268,7 @@ main {
   width: 80%;
   height: 80%;
   border-radius: 4em;
-  margin-bottom: 6em;
+  margin-bottom: 4em;
 }
 .projetos-page ul {
   width: 100%;
@@ -226,14 +286,18 @@ main {
 .projetos-page li {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 1.4em;
   text-align: center;
   width: 22em;
   height: 22em;
   border-radius: 2em;
   background-color: white;
-  padding: 1em 2em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 2.5em;
+  padding-bottom: 1.5em;
   color: black;
 }
 .contato-page {
@@ -264,9 +328,9 @@ main {
 }
   .projetos-page li p {
     line-height: 1em;
-    font-size: 1.1em;
-    text-align: justify;
-    word-spacing: -0.2em;
+    font-size: 1em;
+    text-align: center;
+    margin: 0 auto;
     padding: 0 5%;
 }
   .projetos-page li a {
@@ -286,7 +350,7 @@ main {
     color: black;
     width: 100%;
     height: 100%;
-    border-radius: 1.8em;
+    border-radius: 1.4em;
     border: none;
   }
   .projetos-page li a button:active {
@@ -296,7 +360,7 @@ main {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 6em;
+    height: 4em;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -358,23 +422,30 @@ main {
     display: none;
 }
   .guias {
+    width: 40%;
     height: calc(100% + 12em);
     left: calc(100% + 1em);
     bottom: -20em;
-    background-color: #F9FAFF;
+    background-color: white;
     border: solid 0.4em #B197FC;
     border-radius: 0.8em;
-    transition: 300ms linear;
+    transition: 300ms ease-in;
+  }
+  .guias.dark {
+    background-color: #1D1D1D;
+  }
+  .dark-mode {
+    left: 2em;
   }
   .guias.menu-mobile {
-    left: 60%;
+    left: 55%;
     transition: 300ms linear;
   }
   .guias ul {
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 3em;
     gap: 2em;
+    padding: 0 26%;
   }
   .guias li {
     font-size: 1.6em;
@@ -382,15 +453,13 @@ main {
   .home-page {
     flex-direction: column;
     justify-content: flex-start;
-    padding: 0 5%;
+    padding: 0 10%;
   }
   .conteudo {
     justify-content: flex-start;
     width: 100%;
     height: 50%;
-    padding-right: 5%;
-    padding-left: 5%;
-    padding-top: 6em;
+    padding-top: 4em;
   }
   .conteudo h2 {
     font-size: 1.6em;
@@ -400,11 +469,16 @@ main {
   }
   .conteudo p {
     font-size: 1.26em;
-    max-width: 100%;
+    max-width: 96%;
     margin: auto;
  }
-  .div-avatar {
+  .skills {
     width: 100%;
+    height: 40%;
+    margin: 0;
+  }
+  .skills i {
+    font-size: 7em;
   }
   .projetos-page {
     width: 90%;
@@ -463,14 +537,11 @@ main {
   }
 }
 
-@keyframes fluct {
+@keyframes tata {
   0% {
-    transform: translatey(-2em);
-  }
-  50% {
-    transform: translatey(3em);
+    transform: rotatez(1deg);
   }
   100% { 
-    transform: translatey(-2em);
+    transform: rotatez(360deg);
   }
 }
